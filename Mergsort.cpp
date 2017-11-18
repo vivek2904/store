@@ -61,7 +61,7 @@ void passvalue(int* arr,int length)								//Passed the array initial address as
 		if(fv<(length/2))
 			la[fv]= arr[fv];
 		else
-			ra[(fv-(length/2))]= arr[fv];										//Left and right array saved
+			ra[(fv-(length/2))]= arr[fv];						//Left and right array saved
 	}
 	
 	passvalue(la,i);											//Recursively sorting left and right sublist
