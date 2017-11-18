@@ -5,31 +5,35 @@
 
 #include <iostream>
 using namespace std;
-void sort(int []);
+
+void min(int []);
 void display(int []);
 int main()
 {
 	int age [5]={9,5,7,8,6};
-	sort(age);
+	min(age);
 	return 0;
 } 
 
-void sort(int Arr[5])
+void min(int Arr[5])
 {
-	int temp,i,j;
-	for(i=0;i<=4;i++)
+	for(int j=0;j<4;j++)
 	{
-		for(j=i;j<=4;j++)
+	int minimum=Arr[j];
+	int minid;
+	for(int i=j+1;i<5;i++)
 		{
-			if(Arr[i]>Arr[j])
-			{
-				temp=Arr[j];
-				Arr[j]=Arr[i];
-				Arr[i]=temp;
-			}	
-			else continue;
+			if(minimum<=Arr[i]) continue;
+			else
+			minimum=Arr[i];
+			minid=i;
 		}
-	
+
+		//swap Arr[j] with minimum
+		
+		int temp=Arr[minid];
+		Arr[minid]=Arr[j];
+		Arr[j]=temp;
 	}
 	display(Arr);
 }
@@ -39,7 +43,7 @@ void display(int newarr[5])
 	cout<<"The sorted Array is as :";
 	int k;
 	for(k=0;k<=4;k++)
-	{
+		{
 		cout<<newarr[k]<<" ";
-	}
+		}
 }
